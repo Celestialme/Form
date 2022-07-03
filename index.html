@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html lang="Ka">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form action="" method="post" lang="Ka">
+        <div>
+            <span data-id="name">სახელი გვარი</span>
+            <input id="name" type="text">
+        </div>
+         <div>
+            <span data-id="date">დაბადების თარიღი</span> 
+            <input id="date" type="date"  lang="Ka" required select="none">
+        </div>
+        <div>
+            <span data-id="place">საცხოვრებელი ადგილი</span>
+            <input id="place" type="text" >
+        </div>
+        <div>
+            <span data-id="phone">ტელეფონის ნომერი</span>
+            <input id ="phone" type="text" >
+        </div>
+        <div>
+            <span data-id="mail">იმეილი</span>
+            <input id ="mail" type="mail" >
+        </div>
+        
+        <select id="group-alone">
+            <option value="alone">ინდივიდუალური</option>
+            <option value="group">ჯგუფი</option>
+        </select>
+
+        <select id="speak">
+            <option value="general">ზოგადი</option>
+            <option value="business">ბიზნეს ინგლისური</option>
+        </select>
+
+    </form>
+    
+
+
+</body>
+
+
+
+<script>
+    let spans = document.getElementsByTagName('span');
+
+    for (let span of spans){
+        
+        span.onclick = function(){
+            span.style.width="300px";
+           let input = document.getElementById( span.dataset.id)
+           input.onblur = function(){
+               if (input.value !="") return;
+          
+               span.style.width="100%";
+               span.style.transform = "translate(0%)"
+               }
+            span.style.transform = "translate(-150%)"
+            setTimeout(()=>{
+
+            input.focus();
+            input.showPicker();
+            },500)
+        }
+
+
+    }
+
+
+</script>
+
+
+</html>
