@@ -155,3 +155,11 @@ img{
 img:active,input[type=submit]:active{
     transform: scale(0.9)
 }
+
+
+
+    input[type=date]::-webkit-inner-spin-button, 
+    input[type=date]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
