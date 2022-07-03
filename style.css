@@ -157,9 +157,14 @@ img:active,input[type=submit]:active{
 }
 
 
-
+@media screen and (max-width: 1000px) {
+  
     input[type=date]::-webkit-inner-spin-button, 
-    input[type=date]::-webkit-outer-spin-button { 
+    input[type=date]::-webkit-outer-spin-button,
+    input[type=date]::-webkit-calendar-picker-indicator { 
         -webkit-appearance: none; 
+        display:none;
         margin: 0; 
     }
+
+}
