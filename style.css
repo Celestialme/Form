@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 body {
+    position: fixed;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    background: url(background.jpg) center no-repeat;
+    background: url(background.jpg);
     background-size: cover;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
 }
 body:before {
     content: "";
@@ -19,13 +26,12 @@ body:before {
     background: linear-gradient(99deg,transparent, white 27% 31%,transparent, white);
 }
 form{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    min-width: 600px;
-    transform: translate(-50%);
+  
+        display: flex;
+        flex-direction: column;
+        min-width: 600px;
+      
+
     
 }
 .shadow{
