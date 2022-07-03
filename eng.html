@@ -1,0 +1,86 @@
+<!DOCTYPE html >
+<html lang="Ka">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form action="" method="post" lang="Ka">
+        <div style="text-align: center;">
+            <a href="index.html"> <img src="./geo.png" width="50px" height="50px" alt=""> </a>
+            <a href="eng.html"> <img src="./eng.png" width="50px" height="50px" alt=""></a>
+        </div>
+        <div class='shadow'>
+        <div>
+            <span data-id="name">Name Lastname</span>
+            <input id="name" type="text">
+        </div>
+         <div>
+            <span data-id="date">Date of Birth</span> 
+            <input id="date" type="date"  lang="Ka" required select="none">
+        </div>
+        <div>
+            <span data-id="place">place of residence</span>
+            <input id="place" type="text" >
+        </div>
+        <div>
+            <span data-id="phone">mobile number</span>
+            <input id ="phone" type="text" >
+        </div>
+        <div>
+            <span data-id="mail">Email</span>
+            <input id ="mail" type="mail" >
+        </div>
+        
+        <select id="group-alone">
+            <option value="alone">Individual</option>
+            <option value="group">In group</option>
+        </select>
+
+        <select id="speak">
+            <option value="general">General</option>
+            <option value="business">English for business</option>
+        </select>
+</div>
+    </form>
+    
+
+
+</body>
+
+
+
+<script>
+    let spans = document.getElementsByTagName('span');
+
+    for (let span of spans){
+        
+        span.onclick = function(){
+            span.style.width="300px";
+           let input = document.getElementById( span.dataset.id)
+           input.onblur = function(){
+               if (input.value !="") return;
+          
+               span.style.width="100%";
+               span.style.transform = "translate(0%)"
+               }
+            span.style.transform = "translate(-150%)"
+            setTimeout(()=>{
+
+            input.focus();
+            input.showPicker();
+            },500)
+        }
+
+
+    }
+
+
+</script>
+
+
+</html>
