@@ -3,11 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url(background.jpg) center no-repeat;
+    background-size: cover;
+}
+body:before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(99deg,transparent, white 27% 31%,transparent, white);
+}
 form{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     min-width: 600px;
     transform: translate(-50%);
@@ -30,7 +45,9 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
 input[type=date]:focus::-webkit-datetime-edit {
     color: black !important;
 }
-
+input[type=submit]{
+    background: #00f8c2;
+}
 select{
     text-align: center;
 }
