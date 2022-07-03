@@ -52,6 +52,6 @@ div{
 img{
     cursor:pointer;
 }
-img:active{
+img:active,input[type=submit]:active{
     transform: scale(0.9)
 }
